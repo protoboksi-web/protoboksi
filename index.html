@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ProtoBoksi – 3D-tulostus, resiini & laser-kaiverrus</title>
+  <meta name="description" content="FDM-, resiini- ja laserpalvelut. Lähetä STL tai valitse valmis tuote – valmistus ja postitus koko Suomeen." />
+  <meta name="color-scheme" content="light" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html" aria-label="Etusivu">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect rx="14" ry="14" width="64" height="64" fill="#2e7d6b"/><path d="M18 20l14-6 14 6v14l-14 6-14-6z" fill="#fff"/></svg>
+      <span>ProtoBoksi</span>
+    </a>
+    <nav class="muted">
+      <a href="#palvelut">Palvelut</a>
+      <a href="#products">Valmiit tuotteet</a>
+      <a href="#materials">Materiaalit</a>
+      <a href="#order">Tilaus</a>
+      <a href="mallikirjasto.html">Mallikirjasto</a>
+      <a href="ehdot.html">Ehdot</a>
+      <a href="tietosuoja.html">Tietosuoja</a>
+      <a href="yhteystiedot.html">Yhteystiedot</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="pill">FDM • Resiini • Laser-kaiverrus</div>
+      <h1>Lähetä STL – tulostan ja postitan</h1>
+      <p class="muted">
+        FDM (Bambu Lab A1 &amp; P1S), resiini (ANYCUBIC Photon Mono M5 – 12K-tarkkuus figuille ja pienosiin)
+        sekä laserkaiverrus (CR-Laser Falcon 5W). Ei kivijalkaa – toimitus postitse.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#order">Lähetä tiedosto</a>
+        <a class="btn" href="#products">Katso valmiit tuotteet</a>
+      </div>
+      <div class="equip">
+        <span class="chip">Bambu Lab A1 & P1S</span>
+        <span class="chip">ANYCUBIC Photon Mono M5</span>
+        <span class="chip">CR-Laser Falcon 5W</span>
+      </div>
+    </div>
+    <div class="card hero-card">
+      <img src="/images/hero.jpg" alt="Esimerkkituote" loading="lazy" style="border-radius:12px;border:1px solid var(--line);object-fit:cover;width:100%;aspect-ratio:16/10" onerror="this.src='/images/placeholder.jpg'"/>
+      <div class="muted" style="padding-top:6px">Pienet sarjat, varaosat, personoidut kyltit</div>
+    </div>
+  </section>
+
+  <!-- PALVELUT -->
+  <section id="palvelut">
+    <h2>Palvelut</h2>
+    <div class="grid">
+      <div class="card svc pad"><h3>FDM-tulostus</h3><p class="muted">PLA / PETG / TPU – nopea ja edullinen.</p></div>
+      <div class="card svc pad"><h3>Resiinitulostus</h3><p class="muted">ANYCUBIC Photon Mono M5 – 12K-reso, yksityiskohtaiset osat.</p></div>
+      <div class="card svc pad"><h3>Laserkaiverrus</h3><p class="muted">Puu, nahka, pinnoitetut metallit – merkkaukset ja lahjat.</p></div>
+    </div>
+  </section>
+
+  <!-- TUOTTEET (Google Sheets) -->
+  <section id="products">
+    <h2>Valmiit tuotteet</h2>
+    <p class="muted">Valitse tuote ja klikkaa Tilaa — lomake esitäyttyy automaattisesti.</p>
+    <div class="carousel">
+      <ul id="productsTrack" class="track" aria-live="polite"></ul>
+    </div>
+  </section>
+
+  <!-- MATERIAALIT (Google Sheets) -->
+  <section id="materials">
+    <h2>Materiaalit varastossa</h2>
+    <div id="materialsList" class="grid"></div>
+  </section>
+
+  <!-- TILAUS -->
+  <section id="order">
+    <h2>Lähetä STL ja pyydä tarjous</h2>
+    <div class="grid g2">
+      <div class="card order pad">
+        <form action="https://formsubmit.co/protoboksi@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
+          <!-- FormSubmit -->
+          <input type="hidden" name="_subject" value="ProtoBoksi – uusi pyyntö">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_autoresponse" value="Kiitos viestistä! Palaan tarjouksella pian. – ProtoBoksi">
+          <input type="hidden" name="_next" value="https://www.protoboksi.fi/#kiitos">
+          <input type="text"   name="_honey" style="display:none">
+
+          <!-- Tuote-esitäyttö -->
+          <input type="hidden" id="formProduct" name="Tuote">
+          <input type="hidden" id="formSku"     name="SKU">
+
+          <label for="i_name">Nimi</label>
+          <input id="i_name" name="Nimi" required placeholder="Etunimi Sukunimi">
+
+          <label for="i_email">Sähköposti</label>
+          <input id="i_email" type="email" name="Sähköposti" required placeholder="nimi@esimerkki.fi">
+
+          <label for="i_msg">Viesti</label>
+          <textarea id="i_msg" name="Viesti" placeholder="Kerro mitä tarvitset. Linkki malliin (Thingiverse/Printables) tai mitat."></textarea>
+
+          <label>Liitteet (.stl, .3mf, .obj, .png, .jpg, .pdf)</label>
+          <input type="file" name="files" multiple accept=".stl,.3mf,.obj,.step,.stp,.png,.jpg,.jpeg,.pdf"/>
+
+          <!-- Ruksit samalla rivillä & vain yksi väli ennen Lähetä-nappia -->
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:10px">
+            <label class="agree" style="display:inline-flex; align-items:center; gap:8px; margin:0">
+              <input type="checkbox" name="Tietosuoja" required>
+              <span>Hyväksyn <a href="tietosuoja.html" target="_blank" rel="noopener">tietosuojaselosteen</a>.</span>
+            </label>
+            <label class="agree" style="display:inline-flex; align-items:center; gap:8px; margin:0">
+              <input type="checkbox" name="IPWarranty" required>
+              <span>Vakuutan, että lähettämäni mallit eivät riko tekijänoikeuksia.</span>
+            </label>
+            <button class="btn primary" type="submit" style="margin-left:8px">Lähetä</button>
+          </div>
+
+          <p class="muted sm" style="margin-top:6px">Maksu: ennakkolasku tilisiirrolla. <strong>Työ alkaa, kun maksu näkyy tilillä.</strong></p>
+        </form>
+        <div id="kiitos" class="muted kiitos">Kiitos! Viesti lähetetty.</div>
+      </div>
+
+      <aside class="card pad">
+        <h3>Miten se toimii?</h3>
+        <ol class="muted">
+          <li>Lähetä malli tai valitse tuote.</li>
+          <li>Saat <strong>tarkan hinnan</strong> hyväksyttäväksi.</li>
+          <li>Maksun kirjauduttua teen työn ja postitan.</li>
+        </ol>
+        <p><span class="pill warn">Huom!</span> En tee tekijänoikeutta rikkovia tai vaarallisia kohteita.</p>
+        <p class="muted">Sähköposti: <a href="mailto:protoboksi@gmail.com">protoboksi@gmail.com</a></p>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="logo">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect rx="14" ry="14" width="64" height="64" fill="#2e7d6b"/><path d="M18 20l14-6 14 6v14l-14 6-14-6z" fill="#fff"/></svg>
+      <strong>ProtoBoksi</strong>
+    </div>
+    <div class="legal">
+      <a href="ehdot.html">Ehdot</a> • <a href="tietosuoja.html">Tietosuoja</a> • <a href="mallikirjasto.html">Mallikirjasto</a> • <a href="yhteystiedot.html">Yhteystiedot</a> • © <span id="year"></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  if (location.hash === '#kiitos') {
+    const el = document.getElementById('kiitos'); if (el) el.style.display = 'block';
+  }
+</script>
+<!-- Lataa data Google Sheetsistä (Tuotteet + Materiaalit) -->
+<script src="sheets.js" defer></script>
+</body>
+</html>
+

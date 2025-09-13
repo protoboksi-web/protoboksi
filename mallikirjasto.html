@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mallikirjasto – ProtoBoksi</title>
+  <meta name="description" content="Linkkejä valmiisiin 3D-malleihin sekä ProtoBoksin omia Tinkercad-kokeiluja." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.ico" />
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html" aria-label="Etusivu">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect rx="14" ry="14" width="64" height="64" fill="#2e7d6b"/><path d="M18 20l14-6 14 6v14l-14 6-14-6z" fill="#fff"/></svg>
+      <span>ProtoBoksi</span>
+    </a>
+    <nav class="muted">
+      <a href="index.html#palvelut">Palvelut</a>
+      <a href="index.html#products">Valmiit tuotteet</a>
+      <a href="index.html#materials">Materiaalit</a>
+      <a href="index.html#order">Tilaus</a>
+      <a href="mallikirjasto.html">Mallikirjasto</a>
+      <a href="ehdot.html">Ehdot</a>
+      <a href="tietosuoja.html">Tietosuoja</a>
+      <a href="yhteystiedot.html">Yhteystiedot</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <h1>Mallikirjasto</h1>
+    <p class="muted">Täältä löydät linkkejä suosittuihin mallisivustoihin sekä <strong>omiiin Tinkercad-kokeiluihini</strong>. Muista tarkistaa mallien lisenssi ennen tilausta (kaupalliseen käyttöön sopivat esim. CC BY tai CC0).</p>
+  </section>
+
+  <!-- SUOSITUT KIRJASTOT -->
+  <section>
+    <h2>Suositut mallisivustot</h2>
+    <div id="libList" class="grid"></div>
+    <p class="muted sm mt8">Huom: Kaikki mallit eivät ole kaupallisesti sallittuja. Asiakkaan vastuulla on varmistaa lisenssi.</p>
+  </section>
+
+  <!-- OMAT TINKERCADIT -->
+  <section>
+    <h2>Omat CAD-kokeilut (Tinkercad)</h2>
+    <div id="cadList" class="grid"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><rect rx="14" ry="14" width="64" height="64" fill="#2e7d6b"/><path d="M18 20l14-6 14 6v14l-14 6-14-6z" fill="#fff"/></svg><strong>ProtoBoksi</strong></div>
+    <div class="legal"><a href="index.html">Etusivu</a> • <a href="ehdot.html">Ehdot</a> • <a href="tietosuoja.html">Tietosuoja</a> • <a href="mallikirjasto.html">Mallikirjasto</a> • © <span id="year"></span></div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+<script src="library.js" defer></script>
+</body>
+</html>

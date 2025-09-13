@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tietosuojaseloste – ProtoBoksi</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="wrap nav">
+  <a href="index.html" class="logo"><svg viewBox="0 0 64 64"><rect rx="14" ry="14" width="64" height="64" fill="#2e7d6b"/><path d="M18 20l14-6 14 6v14l-14 6-14-6z" fill="#fff"/></svg><span>ProtoBoksi</span></a>
+  <nav class="muted"><a href="index.html">Etusivu</a><a href="ehdot.html">Ehdot</a><a href="yhteystiedot.html">Yhteystiedot</a></nav>
+</header>
+
+<main class="wrap narrow">
+  <h1>Tietosuojaseloste</h1>
+  <p class="muted">Viimeksi päivitetty: <span id="privacyDate"></span></p>
+
+  <div class="card pad">
+    <h3>1. Rekisterinpitäjä</h3>
+    <p><strong>ProtoBoksi (toiminimi)</strong><br>Y-tunnus 3562829-5<br>Sähköposti: <a href="mailto:protoboksi@gmail.com">protoboksi@gmail.com</a><br>Osoite: Metsontie 10, 53650 Lappeenranta<br>
+
+    <h3>2. Käsiteltävät tiedot</h3>
+    <p>Nimi, sähköposti, viesti, liitteet sekä tilauksen käsittelyyn liittyvät tiedot.</p>
+
+    <h3>3. Tarkoitukset ja peruste</h3>
+    <ul>
+      <li>Tarjousten laatiminen ja yhteydenpito</li>
+      <li>Tilausten toteutus ja toimitus</li>
+      <li>Kirjanpito (lakisääteinen velvoite)</li>
+    </ul>
+
+    <h3>4. Säilytys</h3>
+    <p>Tarjousviestit poistetaan viimeistään 12 kk:ssa, ellei tilaus toteudu. Toteutuneiden tilausten perustiedot säilytetään kirjanpitolain edellyttämän ajan.</p>
+
+    <h3>5. Vastaanottajat/käsittelijät</h3>
+    <ul>
+      <li>FormSubmit (lomakkeiden välitys)</li>
+      <li>Google/Gmail (sähköposti)</li>
+      <li>Netlify (sivuston julkaisu)</li>
+    </ul>
+
+    <h3>6. Evästeet</h3>
+    <p>Ei analytiikkaa eikä markkinointievästeitä. Palvelut voivat tallentaa teknisiä lokitietoja.</p>
+
+    <h3>7. Oikeudet</h3>
+    <p>Voit pyytää tietojesi oikaisua, poistamista tai käsittelyn rajoittamista: <a href="mailto:protoboksi@gmail.com">protoboksi@gmail.com</a>.</p>
+
+    <h3>8. Tietoturva</h3>
+    <p>Tietoja käsitellään luottamuksellisesti. Käytössä HTTPS ja sähköpostissa kaksivaiheinen tunnistus.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="logo"><svg viewBox="0 0 64 64"><rect rx="14" ry="14" width="64" height="64" fill="#2e7d6b"/><path d="M18 20l14-6 14 6v14l-14 6-14-6z" fill="#fff"/></svg><strong>ProtoBoksi</strong></div>
+    <div class="legal"><a href="index.html">Etusivu</a> • <a href="ehdot.html">Ehdot</a> • © <span id="year"></span></div>
+  </div>
+</footer>
+<script>
+document.getElementById('year').textContent=(new Date).getFullYear();
+document.getElementById('privacyDate').textContent=(new Date).toLocaleDateString('fi-FI');
+</script>
+</body>
+</html>
+

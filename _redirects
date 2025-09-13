@@ -1,0 +1,6 @@
+# Kauniit polut alasivuille
+/ehdot        /ehdot.html        200
+/tietosuoja   /tietosuoja.html   200
+
+# Poista /index.html urlista
+/index.html   /                  301
