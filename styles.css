@@ -87,4 +87,56 @@ section{padding:18px 0} h2{font-size:24px;margin:0 0 10px} h3{margin:0 0 8px}
 .consent input[type="checkbox"] {
   margin: 0;
 }
+.consent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap; /* rivittyy nätisti pienellä näytöllä */
+  margin-top: 10px;
+}
+
+.agree {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap; /* estää turhia rivinvaihtoja */
+}
+/* Ruksit + tekstit ruudukkoon, napille oma rivi */
+.consent-grid{
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  grid-auto-rows: auto;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.consent-grid .cbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.consent-grid .cbox input{
+  width: 16px;
+  height: 16px;
+}
+
+.consent-grid .ctext{
+  line-height: 1.35;
+  /* varmista ettei väkisin rivitetä omituisesti */
+  white-space: normal;
+}
+
+@media (max-width: 560px){
+  .consent-grid { grid-template-columns: 20px 1fr; }
+}
+.consent-grid button {
+  grid-column: 1 / span 2; /* nappi venyy kahden sarakkeen yli */
+  justify-self: center;    /* keskitetään */
+  width: auto;             /* ei vie koko tilaa */
+  padding: 10px 24px;      /* mukavan kokoinen */
+}
+
 

@@ -104,22 +104,75 @@
           <input type="hidden" id="formProduct" name="Tuote">
           <input type="hidden" id="formSku"     name="SKU">
 
-          <label for="i_name">Nimi</label>
-          <input id="i_name" name="Nimi" required placeholder="Etunimi Sukunimi">
 
-          <label for="i_email">Sähköposti</label>
-          <input id="i_email" type="email" name="Sähköposti" required placeholder="nimi@esimerkki.fi">
+<!-- TOIMITUSOSOITE -->
+<fieldset style="border:1px dashed var(--line);border-radius:12px;padding:10px;margin-top:10px">
+  <legend class="muted" style="padding:0 6px">Toimitusosoite</legend>
+  <label>
+    Nimi
+    <input type="text" name="name" placeholder="Etunimi Sukunimi" required>
+  </label>
+
+  <label>
+    Sähköposti
+    <input type="email" name="email" placeholder="nimi@esimerkki.fi" required>
+  </label>
+  <label for="addr_street">Katuosoite</label>
+  <input id="addr_street" name="Katuosoite" autocomplete="address-line1" placeholder="Esim. Esimerkkikatu 1 A" />
+
+  <div class="row3">
+    <div>
+      <label for="addr_zip">Postinumero</label>
+      <input id="addr_zip" name="Postinumero" inputmode="numeric" pattern="[0-9]{5}" autocomplete="postal-code" placeholder="00000" />
+    </div>
+    <div>
+      <label for="addr_city">Paikkakunta</label>
+      <input id="addr_city" name="Paikkakunta" autocomplete="address-level2" placeholder="Kaupunki" />
+    </div>
+    <div>
+      <label for="addr_country">Maa</label>
+      <select id="addr_country" name="Maa" autocomplete="country">
+        <option>FI</option>
+        <option>SE</option>
+        <option>NO</option>
+        <option>EE</option>
+      </select>
+    </div>
+  </div>
 
           <label for="i_msg">Viesti</label>
           <textarea id="i_msg" name="Viesti" placeholder="Kerro mitä tarvitset. Linkki malliin (Thingiverse/Printables) tai mitat."></textarea>
 
           <label>Liitteet (.stl, .3mf, .obj, .png, .jpg, .pdf)</label>
           <input type="file" name="files" multiple accept=".stl,.3mf,.obj,.step,.stp,.png,.jpg,.jpeg,.pdf"/>
-
+<!-- MATERIAALI -->
+<label for="materialSelect">Materiaali</label>
+<select id="materialSelect" name="Materiaali" required>
+  <option value="" disabled selected>Valitse materiaali…</option>
+  <!-- Täytetään sheets.js:stä -->
+</select>
           <!-- Ruksit samalla rivillä & vain yksi väli ennen Lähetä-nappia -->
-<div class="consent">
-  <label><input type="checkbox" name="gdpr" required> Hyväksyn <a href="tietosuoja.html">tietosuojaselosteen</a>.</label>
-  <label><input type="checkbox" name="copyright" required> Vakuutan, että lähettämäni mallit eivät riko tekijänoikeuksia.</label>
+<!-- Ruksit + lähetä siistissä ruudukossa -->
+<div class="consent-grid">
+  <!-- Ruksi 1 -->
+  <label class="cbox">
+    <input type="checkbox" name="gdpr" required>
+  </label>
+  <div class="ctext">
+    Hyväksyn <a href="tietosuoja.html" target="_blank" rel="noopener">tietosuojaselosteen</a>.
+  </div>
+
+  <!-- Ruksi 2 -->
+  <label class="cbox">
+    <input type="checkbox" name="copyright" required>
+  </label>
+  <div class="ctext">
+    Vakuutan, että lähettämäni mallit eivät riko tekijänoikeuksia.
+  </div>
+
+  <!-- Tyhjä solu vasen | nappi oikea -->
+  <div></div>
+  <button class="btn primary" type="submit">Lähetä</button>
 </div>
 
 
