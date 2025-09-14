@@ -1,6 +1,6 @@
 // sheets.js — ProtoBoksi (Tuotteet + Materiaalit Google Sheetsistä)
 (() => {
-  const SHEET_ID = '1c_lpTr8TCILxeNV0lwohgLpagALqTgcHhQAeyTbwYNk';
+  const SHEET_ID = '1UXCthyfZTA1Y4C_WRg6CNoHQuAWPKzFKuoOhoEruuKE';
   const SHEET_PRODUCTS  = 'Tuotteet';
   const SHEET_MATERIALS = 'Materiaalit';
   const IMAGE_BASE = 'images/';
