@@ -117,17 +117,11 @@
           <input type="file" name="files" multiple accept=".stl,.3mf,.obj,.step,.stp,.png,.jpg,.jpeg,.pdf"/>
 
           <!-- Ruksit samalla rivillä & vain yksi väli ennen Lähetä-nappia -->
-          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:10px">
-            <label class="agree" style="display:inline-flex; align-items:center; gap:8px; margin:0">
-              <input type="checkbox" name="Tietosuoja" required>
-              <span>Hyväksyn <a href="tietosuoja.html" target="_blank" rel="noopener">tietosuojaselosteen</a>.</span>
-            </label>
-            <label class="agree" style="display:inline-flex; align-items:center; gap:8px; margin:0">
-              <input type="checkbox" name="IPWarranty" required>
-              <span>Vakuutan, että lähettämäni mallit eivät riko tekijänoikeuksia.</span>
-            </label>
-            <button class="btn primary" type="submit" style="margin-left:8px">Lähetä</button>
-          </div>
+<div class="consent">
+  <label><input type="checkbox" name="gdpr" required> Hyväksyn <a href="tietosuoja.html">tietosuojaselosteen</a>.</label>
+  <label><input type="checkbox" name="copyright" required> Vakuutan, että lähettämäni mallit eivät riko tekijänoikeuksia.</label>
+</div>
+
 
           <p class="muted sm" style="margin-top:6px">Maksu: ennakkolasku tilisiirrolla. <strong>Työ alkaa, kun maksu näkyy tilillä.</strong></p>
         </form>

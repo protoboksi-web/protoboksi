@@ -72,3 +72,19 @@ section{padding:18px 0} h2{font-size:24px;margin:0 0 10px} h3{margin:0 0 8px}
 @media (max-width: 560px){
   .track{ grid-auto-columns: minmax(220px, 90vw); }
 }
+.consent {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 12px; /* pysty- ja sivuvälit */
+  align-items: center;
+  margin-top: 12px;
+}
+
+.consent label {
+  display: contents; /* checkbox menee ekaan sarakkeeseen, teksti toiseen */
+}
+
+.consent input[type="checkbox"] {
+  margin: 0;
+}
+
