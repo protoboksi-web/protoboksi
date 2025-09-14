@@ -27,3 +27,48 @@ section{padding:18px 0} h2{font-size:24px;margin:0 0 10px} h3{margin:0 0 8px}
 .narrow{max-width:740px}
 .pad{padding:14px}
 @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.g2{grid-template-columns:1fr}}
+/* --- Tuotekarusellin koon korjaus --- */
+.track{
+  display:grid;
+  grid-auto-flow: column;
+  /* Aiempi calc(33.333% - 12px) korvataan kiinteämmällä leveydellä */
+  grid-auto-columns: minmax(220px, 320px);
+  gap:12px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding:6px 2px;
+}
+
+.pcard{
+  list-style:none;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  box-shadow:var(--shadow);
+  scroll-snap-align:start;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  /* varmistetaan ettei veny liikaa */
+  max-width: 340px;
+}
+
+.pcard .imgwrap{
+  aspect-ratio: 4 / 3;
+  background:#fffaf6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-bottom:1px solid var(--line);
+}
+
+.pcard .imgwrap img{
+  max-height:100%;
+  width:100%;
+  object-fit:contain; /* ettei kuva veny */
+}
+
+/* Hiukan pienemmät leveydet kännykällä */
+@media (max-width: 560px){
+  .track{ grid-auto-columns: minmax(220px, 90vw); }
+}
